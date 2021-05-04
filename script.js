@@ -71,7 +71,7 @@ const displayComputerChoice = () => {
 };
 
 // Check result, increase scores, update resultText
-const updateScore = (playerChoice) => {
+const updateScore = playerChoice => {
   if (playerChoice === computerChoice) return resultText.textContent = "It's a Tie!";
 
   // Checks if the computer's choice was included in the choice's object defeat array
@@ -123,3 +123,16 @@ const select = playerChoice => {
       break;
   }
 };
+
+// Resets all elements
+const resetAll = () => {
+  resetSelected();
+  playerScoreNumber = 0;
+  playerScoreEl.textContent = playerScoreNumber;
+  computerScoreNumber = 0;
+  computerScoreEl.textContent = computerScoreNumber;
+  computerChoice = '';
+  resultText.textContent = '';
+  playerChoiceEl.textContent = ' --- Choice';
+  computerChoiceEl.textContent = ' --- Choice';
+}
